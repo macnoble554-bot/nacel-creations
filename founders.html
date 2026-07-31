@@ -7,277 +7,227 @@
 <title>Nacel Creations | Founder Dashboard</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
 }
 
-body {
-  background: #f4f6f8;
-  color: #17202a;
+body{
+  background:#f5f7fb;
+  color:#222;
 }
 
-/* LOGIN */
-.login-screen {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #07111f, #102d4d);
+.login{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  background:linear-gradient(135deg,#111827,#1f2937);
 }
 
-.login-box {
-  width: 100%;
-  max-width: 420px;
-  background: white;
-  padding: 35px 25px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 20px 50px rgba(0,0,0,.3);
+.login-box{
+  width:100%;
+  max-width:420px;
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,.3);
+  text-align:center;
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #0b5ed7;
-  margin-bottom: 8px;
+.login-box h1{
+  margin-bottom:8px;
 }
 
-.login-box h1 {
-  margin: 10px 0;
+.login-box p{
+  color:#666;
+  margin-bottom:25px;
 }
 
-.login-box p {
-  color: #666;
-  margin-bottom: 25px;
+input,select,textarea{
+  width:100%;
+  padding:13px;
+  margin:7px 0 15px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:15px;
 }
 
-input, textarea, select {
-  width: 100%;
-  padding: 13px;
-  margin: 8px 0;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 15px;
+button{
+  border:0;
+  border-radius:10px;
+  padding:13px 18px;
+  cursor:pointer;
+  font-weight:bold;
 }
 
-button {
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 13px 18px;
-  font-weight: bold;
+.login-btn,
+.save-btn{
+  background:#111827;
+  color:white;
+  width:100%;
 }
 
-.login-btn {
-  width: 100%;
-  background: #0b5ed7;
-  color: white;
-  margin-top: 10px;
+.dashboard{
+  display:none;
 }
 
-.error {
-  color: #d00;
-  margin-top: 12px;
-  display: none;
+header{
+  background:#111827;
+  color:white;
+  padding:22px;
 }
 
-/* DASHBOARD */
-.dashboard {
-  display: none;
+.header-inner{
+  max-width:1200px;
+  margin:auto;
 }
 
-header {
-  background: #07111f;
-  color: white;
-  padding: 20px;
+header h1{
+  font-size:25px;
 }
 
-.header-content {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
+header p{
+  color:#cbd5e1;
+  margin-top:5px;
 }
 
-header h1 {
-  font-size: 22px;
+.logout{
+  margin-top:15px;
+  background:#dc2626;
+  color:white;
 }
 
-header p {
-  color: #b9c7d8;
-  margin-top: 5px;
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:25px 15px 50px;
 }
 
-.logout {
-  background: #dc3545;
-  color: white;
+.welcome{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 25px 18px;
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+  margin-bottom:25px;
 }
 
-.welcome {
-  background: white;
-  padding: 25px;
-  border-radius: 18px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+.stat{
+  background:white;
+  padding:22px;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
 }
 
-.welcome h2 {
-  color: #0b5ed7;
-  margin-bottom: 8px;
+.stat h2{
+  font-size:28px;
+  margin-bottom:5px;
 }
 
-/* STATS */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-bottom: 25px;
+.stat p{
+  color:#666;
 }
 
-.stat {
-  background: white;
-  padding: 22px;
-  border-radius: 16px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+.section{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:25px;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
 }
 
-.stat h3 {
-  font-size: 30px;
-  color: #0b5ed7;
+.section h2{
+  margin-bottom:10px;
 }
 
-.stat p {
-  color: #666;
-  margin-top: 5px;
+.description{
+  color:#666;
+  margin-bottom:20px;
 }
 
-/* SECTIONS */
-.section {
-  background: white;
-  border-radius: 18px;
-  padding: 22px;
-  margin-bottom: 22px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
 }
 
-.section h2 {
-  margin-bottom: 15px;
-  color: #102d4d;
+.card{
+  border:1px solid #e5e7eb;
+  border-radius:15px;
+  padding:20px;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+.card h3{
+  margin-bottom:8px;
 }
 
-.card {
-  border: 1px solid #e4e8ed;
-  border-radius: 14px;
-  padding: 18px;
+.card p{
+  color:#666;
+  line-height:1.5;
+  margin-bottom:15px;
 }
 
-.card h3 {
-  color: #0b5ed7;
-  margin-bottom: 8px;
+.action{
+  background:#111827;
+  color:white;
 }
 
-.card p {
-  color: #666;
-  line-height: 1.5;
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
 }
 
-.action-btn {
-  background: #0b5ed7;
-  color: white;
-  margin-top: 12px;
+table{
+  width:100%;
+  min-width:650px;
+  border-collapse:collapse;
+  margin-top:15px;
 }
 
-/* TABLE */
-.table-wrapper {
-  overflow-x: auto;
+th,td{
+  border-bottom:1px solid #eee;
+  padding:13px;
+  text-align:left;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 600px;
+th{
+  background:#f8fafc;
 }
 
-th, td {
-  padding: 13px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
+.danger{
+  background:#dc2626;
+  color:white;
 }
 
-th {
-  background: #f1f5f9;
+.small-btn{
+  padding:8px 11px;
+  font-size:13px;
 }
 
-/* FORMS */
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
+.success{
+  color:#15803d;
+  font-weight:bold;
 }
 
-.full {
-  grid-column: 1 / -1;
+.pending{
+  color:#ca8a04;
+  font-weight:bold;
 }
 
-.save-btn {
-  background: #198754;
-  color: white;
-  margin-top: 10px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px 15px;
-  color: #777;
-}
-
-/* MOBILE */
-@media (max-width: 800px) {
-  .stats {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .full {
-    grid-column: auto;
-  }
-
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 480px) {
-  .stats {
-    grid-template-columns: 1fr;
-  }
+footer{
+  text-align:center;
+  padding:25px;
+  color:#777;
 }
 </style>
 </head>
@@ -286,32 +236,23 @@ footer {
 
 <!-- ================= LOGIN ================= -->
 
-<div class="login-screen" id="loginScreen">
+<div class="login" id="loginPage">
 
   <div class="login-box">
 
-    <div class="logo">NACEL CREATIONS</div>
+    <h1>👑 Founder Access</h1>
 
-    <h1>Founder Access</h1>
-
-    <p>
-      Welcome, Sir Noble Wisdom.<br>
-      Enter your Founder Access Code.
-    </p>
+    <p>Nacel Creations Founder Dashboard</p>
 
     <input
       type="password"
-      id="founderCode"
-      placeholder="Enter Founder Code"
+      id="founderPassword"
+      placeholder="Enter founder password"
     >
 
-    <button class="login-btn" onclick="login()">
+    <button class="login-btn" onclick="loginFounder()">
       Enter Founder Dashboard
     </button>
-
-    <div class="error" id="error">
-      Incorrect Founder Code.
-    </div>
 
   </div>
 
@@ -324,14 +265,13 @@ footer {
 
 <header>
 
-  <div class="header-content">
+  <div class="header-inner">
 
-    <div>
-      <h1>Nacel Creations — Founder Dashboard</h1>
-      <p>Welcome, Sir Noble Wisdom</p>
-    </div>
+    <h1>👑 Sir Noble Wisdom</h1>
 
-    <button class="logout" onclick="logout()">
+    <p>Founder & Director — Nacel Creations</p>
+
+    <button class="logout" onclick="logoutFounder()">
       Logout
     </button>
 
@@ -342,43 +282,43 @@ footer {
 
 <div class="container">
 
+
 <!-- WELCOME -->
 
 <div class="welcome">
 
-  <h2>Founder Control Center</h2>
+  <h2>Welcome back, Founder.</h2>
 
-  <p>
-    This is your central management area for Nacel Creations.
-    Monitor students, manage lessons, publish announcements,
-    create assignments, share notes and organize your curriculum.
+  <p style="color:#666;margin-top:8px;">
+    Manage students, courses, payments, assignments,
+    notes, announcements and curriculum from one place.
   </p>
 
 </div>
 
 
-<!-- STATISTICS -->
+<!-- STATS -->
 
 <div class="stats">
 
   <div class="stat">
-    <h3 id="studentCount">0</h3>
+    <h2 id="studentCount">0</h2>
     <p>Total Students</p>
   </div>
 
   <div class="stat">
-    <h3>3</h3>
-    <p>Active Courses</p>
+    <h2 id="paidCount">0</h2>
+    <p>Paid Students</p>
   </div>
 
   <div class="stat">
-    <h3 id="assignmentCount">0</h3>
-    <p>Assignments</p>
+    <h2 id="pendingCount">0</h2>
+    <p>Pending Payments</p>
   </div>
 
   <div class="stat">
-    <h3 id="announcementCount">0</h3>
-    <p>Announcements</p>
+    <h2 id="revenueTotal">₦0</h2>
+    <p>Total Revenue</p>
   </div>
 
 </div>
@@ -388,47 +328,49 @@ footer {
 
 <div class="section">
 
-<h2>Courses</h2>
+  <h2>🎓 Course Management</h2>
 
-<div class="cards">
+  <p class="description">
+    Manage the courses currently offered by Nacel Creations.
+  </p>
 
-<div class="card">
-<h3>Graphic Design</h3>
-<p>
-Teach students practical graphic design skills,
-creative thinking and professional design techniques.
-</p>
-<button class="action-btn"
-onclick="alert('Graphic Design course management opened.')">
-Manage Course
-</button>
-</div>
+  <div class="grid">
 
-<div class="card">
-<h3>Web Development</h3>
-<p>
-Teach students how to create websites, understand
-HTML, CSS, JavaScript and build real projects.
-</p>
-<button class="action-btn"
-onclick="alert('Web Development course management opened.')">
-Manage Course
-</button>
-</div>
+    <div class="card">
+      <h3>🎨 Graphic Design</h3>
+      <p>
+        Practical graphic design training for students.
+      </p>
+      <button class="action"
+      onclick="alert('Graphic Design course management opened.')">
+        Manage Course
+      </button>
+    </div>
 
-<div class="card">
-<h3>AI & Automatics</h3>
-<p>
-Introduce students to Artificial Intelligence,
-automation and practical modern technology.
-</p>
-<button class="action-btn"
-onclick="alert('AI & Automatics course management opened.')">
-Manage Course
-</button>
-</div>
+    <div class="card">
+      <h3>💻 Web Development</h3>
+      <p>
+        Learn how to build modern websites and web projects.
+      </p>
+      <button class="action"
+      onclick="alert('Web Development course management opened.')">
+        Manage Course
+      </button>
+    </div>
 
-</div>
+    <div class="card">
+      <h3>🤖 AI & Automatics</h3>
+      <p>
+        Artificial Intelligence, automation and modern technology.
+      </p>
+      <button class="action"
+      onclick="alert('AI & Automatics course management opened.')">
+        Manage Course
+      </button>
+    </div>
+
+  </div>
+
 </div>
 
 
@@ -436,78 +378,61 @@ Manage Course
 
 <div class="section">
 
-<h2>Student Progress</h2>
+  <h2>📈 Student Progress</h2>
 
-<div class="table-wrapper">
+  <p class="description">
+    Monitor how students are progressing through their courses.
+  </p>
 
-<table>
+  <div class="table-wrap">
 
-<thead>
-<tr>
-<th>Student</th>
-<th>Course</th>
-<th>Progress</th>
-<th>Status</th>
-</tr>
-</thead>
+    <table>
 
-<tbody>
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Course</th>
+          <th>Progress</th>
+          <th>Status</th>
+        </tr>
+      </thead>
 
-<tr>
-<td>Sample Student</td>
-<td>Web Development</td>
-<td>65%</td>
-<td>Active</td>
-</tr>
+      <tbody id="progressTable">
 
-<tr>
-<td>Sample Student</td>
-<td>Graphic Design</td>
-<td>80%</td>
-<td>Active</td>
-</tr>
+        <tr>
+          <td colspan="4">
+            No student records yet.
+          </td>
+        </tr>
 
-<tr>
-<td>Sample Student</td>
-<td>AI & Automatics</td>
-<td>40%</td>
-<td>Needs Attention</td>
-</tr>
+      </tbody>
 
-</tbody>
+    </table>
 
-</table>
-
-</div>
+  </div>
 
 </div>
 
 
-<!-- ANNOUNCEMENT -->
+<!-- ANNOUNCEMENTS -->
 
 <div class="section">
 
-<h2>Publish Announcement</h2>
+  <h2>📢 Announcements</h2>
 
-<div class="form-grid">
+  <p class="description">
+    Create important announcements for your students.
+  </p>
 
-<input
-id="announcementTitle"
-placeholder="Announcement title"
->
+  <textarea
+    id="announcementText"
+    rows="5"
+    placeholder="Write announcement here..."
+  ></textarea>
 
-<textarea
-class="full"
-id="announcementText"
-rows="4"
-placeholder="Write announcement for students..."
-></textarea>
-
-</div>
-
-<button class="save-btn" onclick="publishAnnouncement()">
-Publish Announcement
-</button>
+  <button class="save-btn" onclick="createAnnouncement()">
+    Publish Announcement
+  </button>
 
 </div>
 
@@ -516,63 +441,53 @@ Publish Announcement
 
 <div class="section">
 
-<h2>Share Learning Notes</h2>
+  <h2>📝 Notes & Learning Materials</h2>
 
-<div class="form-grid">
+  <p class="description">
+    Add notes and learning resources for your students.
+  </p>
 
-<input
-id="noteTitle"
-placeholder="Note title"
->
+  <input
+    id="noteTitle"
+    placeholder="Note title"
+  >
 
-<select id="noteCourse">
+  <textarea
+    id="noteContent"
+    rows="6"
+    placeholder="Write your lesson note..."
+  ></textarea>
 
-<option>Graphic Design</option>
-<option>Web Development</option>
-<option>AI & Automatics</option>
-
-</select>
-
-<textarea
-class="full"
-id="noteContent"
-rows="6"
-placeholder="Write your lesson notes here..."
-></textarea>
-
-</div>
-
-<button class="save-btn" onclick="saveNote()">
-Save Notes
-</button>
+  <button class="save-btn" onclick="saveNote()">
+    Save Note
+  </button>
 
 </div>
 
 
-<!-- PDF / RESOURCES -->
+<!-- PDF / RESOURCE -->
 
 <div class="section">
 
-<h2>Learning Resources</h2>
+  <h2>📄 PDF Notes & Resources</h2>
 
-<p>
-Add links to PDF notes, learning materials, documents
-and other resources for students.
-</p>
+  <p class="description">
+    Add a title and link to a PDF or online learning resource.
+  </p>
 
-<input
-id="resourceTitle"
-placeholder="Resource name"
->
+  <input
+    id="resourceTitle"
+    placeholder="Resource title"
+  >
 
-<input
-id="resourceLink"
-placeholder="Paste PDF / document link"
->
+  <input
+    id="resourceLink"
+    placeholder="Paste PDF/resource link"
+  >
 
-<button class="action-btn" onclick="addResource()">
-Add Resource
-</button>
+  <button class="save-btn" onclick="saveResource()">
+    Add Resource
+  </button>
 
 </div>
 
@@ -581,35 +496,34 @@ Add Resource
 
 <div class="section">
 
-<h2>Create Assignment</h2>
+  <h2>📚 Assignments</h2>
 
-<div class="form-grid">
+  <p class="description">
+    Create assignments and provide instructions for students.
+  </p>
 
-<input
-id="assignmentTitle"
-placeholder="Assignment title"
->
+  <input
+    id="assignmentTitle"
+    placeholder="Assignment title"
+  >
 
-<select id="assignmentCourse">
+  <select id="assignmentCourse">
 
-<option>Graphic Design</option>
-<option>Web Development</option>
-<option>AI & Automatics</option>
+    <option>Graphic Design</option>
+    <option>Web Development</option>
+    <option>AI & Automatics</option>
 
-</select>
+  </select>
 
-<textarea
-class="full"
-id="assignmentDescription"
-rows="5"
-placeholder="Write assignment instructions..."
-></textarea>
+  <textarea
+    id="assignmentInstructions"
+    rows="5"
+    placeholder="Write assignment instructions..."
+  ></textarea>
 
-</div>
-
-<button class="save-btn" onclick="createAssignment()">
-Create Assignment
-</button>
+  <button class="save-btn" onclick="createAssignment()">
+    Create Assignment
+  </button>
 
 </div>
 
@@ -618,121 +532,187 @@ Create Assignment
 
 <div class="section">
 
-<h2>Curriculum Planner</h2>
+  <h2>🗓️ Curriculum Planner</h2>
 
-<p style="margin-bottom:15px;color:#666;">
-Plan how many days students will learn each week and
-prepare topics ahead of time.
-</p>
+  <p class="description">
+    Plan how many days students will learn each week
+    and prepare topics ahead of time.
+  </p>
 
-<div class="form-grid">
+  <select id="curriculumCourse">
 
-<select id="curriculumCourse">
+    <option>Graphic Design</option>
+    <option>Web Development</option>
+    <option>AI & Automatics</option>
 
-<option>Graphic Design</option>
-<option>Web Development</option>
-<option>AI & Automatics</option>
+  </select>
 
-</select>
+  <select id="daysPerWeek">
 
-<select id="daysPerWeek">
+    <option>1 day per week</option>
+    <option>2 days per week</option>
+    <option>3 days per week</option>
+    <option>4 days per week</option>
+    <option>5 days per week</option>
+    <option>6 days per week</option>
+    <option>7 days per week</option>
 
-<option>1 day per week</option>
-<option>2 days per week</option>
-<option>3 days per week</option>
-<option>4 days per week</option>
-<option>5 days per week</option>
-<option>6 days per week</option>
-<option>7 days per week</option>
+  </select>
 
-</select>
+  <input
+    id="weekNumber"
+    placeholder="Week number e.g. Week 1"
+  >
 
-<input
-id="weekNumber"
-placeholder="Week number e.g. Week 1"
->
+  <input
+    id="topic"
+    placeholder="Topic to teach"
+  >
 
-<input
-id="topic"
-placeholder="Topic to teach"
->
+  <textarea
+    id="curriculumDetails"
+    rows="5"
+    placeholder="Additional teaching plan..."
+  ></textarea>
 
-<textarea
-class="full"
-id="curriculumDetails"
-rows="4"
-placeholder="Lesson objectives / details..."
-></textarea>
-
-</div>
-
-<button class="save-btn" onclick="saveCurriculum()">
-Save Curriculum
-</button>
+  <button class="save-btn" onclick="saveCurriculum()">
+    Save Curriculum
+  </button>
 
 </div>
 
 
-<!-- FOUNDER PROFILE -->
+<!-- ================= PAYMENT MANAGEMENT ================= -->
 
 <div class="section">
 
-<h2>Founder Profile</h2>
+  <h2>💰 Payment Management</h2>
 
-<div class="cards">
+  <p class="description">
+    Track student payments, enrollment fees and payment status.
+  </p>
 
-<div class="card">
 
-<h3>Sir Noble Wisdom</h3>
+  <div class="stats">
 
-<p>
-Founder of Nacel Creations.
-</p>
+    <div class="stat">
+      <h2 id="paymentPaid">0</h2>
+      <p>Paid Students</p>
+    </div>
 
-<p style="margin-top:10px;">
-A passionate lover of creativity, driven by the desire
-to express ideas in his own unique way.
-</p>
+    <div class="stat">
+      <h2 id="paymentPending">0</h2>
+      <p>Pending Payments</p>
+    </div>
 
-<p style="margin-top:10px;">
-<strong>Philosophy:</strong><br>
-Create. Build. Elevate.
-</p>
+    <div class="stat">
+      <h2 id="paymentRevenue">₦0</h2>
+      <p>Total Revenue</p>
+    </div>
+
+  </div>
+
+
+  <h3 style="margin-bottom:15px;">
+    Add Payment Record
+  </h3>
+
+  <input
+    id="paymentStudent"
+    placeholder="Student name"
+  >
+
+  <select id="paymentCourse">
+
+    <option>Graphic Design</option>
+    <option>Web Development</option>
+    <option>AI & Automatics</option>
+
+  </select>
+
+  <input
+    id="paymentAmount"
+    type="number"
+    placeholder="Amount paid (₦)"
+  >
+
+  <select id="paymentStatus">
+
+    <option>Paid</option>
+    <option>Pending</option>
+
+  </select>
+
+  <button class="save-btn" onclick="addPayment()">
+    Add Payment Record
+  </button>
+
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Student</th>
+          <th>Course</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+
+      </thead>
+
+      <tbody id="paymentTable">
+
+        <tr>
+          <td colspan="5">
+            No payment records yet.
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
 
 </div>
 
 
-<div class="card">
+<!-- PAYMENT DETAILS -->
 
-<h3>Vision</h3>
+<div class="section">
 
-<p>
-To help people develop practical digital skills,
-turn ideas into real projects and build a better future
-through technology and creativity.
-</p>
+  <h2>🏦 Enrollment Payment Information</h2>
 
-</div>
+  <p class="description">
+    These are the payment details students can use when enrolling.
+  </p>
 
+  <!-- PAYMENT DETAILS WILL BE PLACED HERE -->
 
-<div class="card">
+  <div class="card">
 
-<h3>Founder Responsibilities</h3>
+    <h3>Bank Transfer</h3>
 
-<p>
-✓ Monitor students<br>
-✓ Track progress<br>
-✓ Manage courses<br>
-✓ Create curriculum<br>
-✓ Publish announcements<br>
-✓ Give notes<br>
-✓ Share PDF resources<br>
-✓ Create assignments
-</p>
+    <p>
+      <strong>Bank:</strong>
+      <span id="bankName">OPay</span>
+    </p>
 
-</div>
+    <p>
+      <strong>Account Name:</strong>
+      <span id="accountName">NOBLE OKECHUKWU</span>
+    </p>
 
-</div>
+    <p>
+      <strong>Account Number:</strong>
+      <span id="accountNumber">6583867687</span>
+    </p>
+
+  </div>
 
 </div>
 
@@ -741,7 +721,7 @@ through technology and creativity.
 
 
 <footer>
-© 2026 Nacel Creations — Create. Build. Elevate.
+  © 2026 Nacel Creations — Founder Dashboard
 </footer>
 
 </div>
@@ -749,160 +729,168 @@ through technology and creativity.
 
 <script>
 
-/* ================= FOUNDER CODE =================
-   Change this code whenever you want.
+/* =====================================
+   FOUNDER LOGIN
+===================================== */
+
+/*
+   CHANGE ONLY THE TEXT INSIDE THE QUOTES
+   TO YOUR EXISTING FOUNDER PASSWORD.
 */
 
-const FOUNDER_CODE = "NACEL2026";
+const FOUNDER_PASSWORD = "CHANGE_THIS_PASSWORD";
 
 
-function login() {
+function loginFounder(){
 
-  const enteredCode =
-    document.getElementById("founderCode").value;
+  const entered =
+    document.getElementById("founderPassword").value;
 
-  if (enteredCode === FOUNDER_CODE) {
+  if(entered === FOUNDER_PASSWORD){
 
-    document.getElementById("loginScreen").style.display = "none";
+    document.getElementById("loginPage").style.display="none";
 
-    document.getElementById("dashboard").style.display = "block";
+    document.getElementById("dashboard").style.display="block";
 
-    localStorage.setItem("nacelFounderLoggedIn", "true");
+    loadPayments();
 
-  } else {
+  }else{
 
-    document.getElementById("error").style.display = "block";
+    alert("Incorrect founder password.");
 
   }
 
 }
 
 
-function logout() {
+function logoutFounder(){
 
-  localStorage.removeItem("nacelFounderLoggedIn");
+  document.getElementById("dashboard").style.display="none";
 
-  document.getElementById("dashboard").style.display = "none";
+  document.getElementById("loginPage").style.display="flex";
 
-  document.getElementById("loginScreen").style.display = "flex";
-
-}
-
-
-/* Keep founder logged in on the same device */
-
-if (localStorage.getItem("nacelFounderLoggedIn") === "true") {
-
-  document.getElementById("loginScreen").style.display = "none";
-
-  document.getElementById("dashboard").style.display = "block";
+  document.getElementById("founderPassword").value="";
 
 }
 
 
-/* ANNOUNCEMENT */
+/* =====================================
+   ANNOUNCEMENT
+===================================== */
 
-function publishAnnouncement() {
-
-  const title =
-    document.getElementById("announcementTitle").value;
+function createAnnouncement(){
 
   const text =
-    document.getElementById("announcementText").value;
+    document.getElementById("announcementText").value.trim();
 
-  if (!title || !text) {
+  if(!text){
 
-    alert("Please enter the announcement title and message.");
+    alert("Please write an announcement.");
 
     return;
 
   }
+
+  localStorage.setItem("lastAnnouncement",text);
 
   let count =
     Number(localStorage.getItem("announcementCount") || 0);
 
   count++;
 
-  localStorage.setItem("announcementCount", count);
-
-  document.getElementById("announcementCount").innerText = count;
+  localStorage.setItem("announcementCount",count);
 
   alert("Announcement published successfully.");
 
-  document.getElementById("announcementTitle").value = "";
-
-  document.getElementById("announcementText").value = "";
+  document.getElementById("announcementText").value="";
 
 }
 
 
-/* NOTES */
+/* =====================================
+   NOTES
+===================================== */
 
-function saveNote() {
+function saveNote(){
 
   const title =
-    document.getElementById("noteTitle").value;
+    document.getElementById("noteTitle").value.trim();
 
   const content =
-    document.getElementById("noteContent").value;
+    document.getElementById("noteContent").value.trim();
 
-  if (!title || !content) {
+  if(!title || !content){
 
-    alert("Please enter a note title and lesson content.");
+    alert("Please enter the note title and content.");
 
     return;
 
   }
 
-  alert("Learning notes saved successfully.");
+  localStorage.setItem("lastNoteTitle",title);
 
-  document.getElementById("noteTitle").value = "";
+  localStorage.setItem("lastNoteContent",content);
 
-  document.getElementById("noteContent").value = "";
+  alert("Note saved successfully.");
+
+  document.getElementById("noteTitle").value="";
+
+  document.getElementById("noteContent").value="";
 
 }
 
 
-/* RESOURCES */
+/* =====================================
+   RESOURCE
+===================================== */
 
-function addResource() {
+function saveResource(){
 
   const title =
-    document.getElementById("resourceTitle").value;
+    document.getElementById("resourceTitle").value.trim();
 
   const link =
-    document.getElementById("resourceLink").value;
+    document.getElementById("resourceLink").value.trim();
 
-  if (!title || !link) {
+  if(!title || !link){
 
-    alert("Please enter the resource name and link.");
+    alert("Please enter the resource title and link.");
 
     return;
 
   }
 
-  alert("Learning resource added successfully.");
+  localStorage.setItem("resourceTitle",title);
 
-  document.getElementById("resourceTitle").value = "";
+  localStorage.setItem("resourceLink",link);
 
-  document.getElementById("resourceLink").value = "";
+  alert("Resource saved successfully.");
+
+  document.getElementById("resourceTitle").value="";
+
+  document.getElementById("resourceLink").value="";
 
 }
 
 
-/* ASSIGNMENT */
+/* =====================================
+   ASSIGNMENT
+===================================== */
 
-function createAssignment() {
+function createAssignment(){
 
   const title =
-    document.getElementById("assignmentTitle").value;
+    document.getElementById("assignmentTitle").value.trim();
 
-  const description =
-    document.getElementById("assignmentDescription").value;
+  const course =
+    document.getElementById("assignmentCourse").value;
 
-  if (!title || !description) {
+  const instructions =
+    document.getElementById("assignmentInstructions").value.trim();
 
-    alert("Please enter the assignment details.");
+  if(!title || !instructions){
+
+    alert("Please enter the assignment title and instructions.");
 
     return;
 
@@ -913,30 +901,42 @@ function createAssignment() {
 
   count++;
 
-  localStorage.setItem("assignmentCount", count);
+  localStorage.setItem("assignmentCount",count);
 
-  document.getElementById("assignmentCount").innerText = count;
+  alert(
+    "Assignment created successfully.\n\n" +
+    course + " — " + title
+  );
 
-  alert("Assignment created successfully.");
+  document.getElementById("assignmentTitle").value="";
 
-  document.getElementById("assignmentTitle").value = "";
-
-  document.getElementById("assignmentDescription").value = "";
+  document.getElementById("assignmentInstructions").value="";
 
 }
 
 
-/* CURRICULUM */
+/* =====================================
+   CURRICULUM
+===================================== */
 
-function saveCurriculum() {
+function saveCurriculum(){
 
-  const topic =
-    document.getElementById("topic").value;
+  const course =
+    document.getElementById("curriculumCourse").value;
+
+  const days =
+    document.getElementById("daysPerWeek").value;
 
   const week =
-    document.getElementById("weekNumber").value;
+    document.getElementById("weekNumber").value.trim();
 
-  if (!topic || !week) {
+  const topic =
+    document.getElementById("topic").value.trim();
+
+  const details =
+    document.getElementById("curriculumDetails").value.trim();
+
+  if(!week || !topic){
 
     alert("Please enter the week and topic.");
 
@@ -944,32 +944,210 @@ function saveCurriculum() {
 
   }
 
+  localStorage.setItem("curriculumCourse",course);
+
+  localStorage.setItem("curriculumDays",days);
+
+  localStorage.setItem("curriculumWeek",week);
+
+  localStorage.setItem("curriculumTopic",topic);
+
+  localStorage.setItem("curriculumDetails",details);
+
   alert(
     "Curriculum saved successfully.\n\n" +
+    course + "\n" +
     week + " — " + topic
   );
 
-  document.getElementById("weekNumber").value = "";
+  document.getElementById("weekNumber").value="";
 
-  document.getElementById("topic").value = "";
+  document.getElementById("topic").value="";
 
-  document.getElementById("curriculumDetails").value = "";
+  document.getElementById("curriculumDetails").value="";
 
 }
 
 
-/* LOAD SAVED COUNTS */
+/* =====================================
+   PAYMENT MANAGEMENT
+===================================== */
 
-document.getElementById("announcementCount").innerText =
-  localStorage.getItem("announcementCount") || 0;
+function getPayments(){
 
-document.getElementById("assignmentCount").innerText =
-  localStorage.getItem("assignmentCount") || 0;
+  return JSON.parse(
+    localStorage.getItem("nacelPayments") || "[]"
+  );
 
-document.getElementById("studentCount").innerText =
-  localStorage.getItem("studentCount") || 0;
+}
+
+
+function addPayment(){
+
+  const student =
+    document.getElementById("paymentStudent").value.trim();
+
+  const course =
+    document.getElementById("paymentCourse").value;
+
+  const amount =
+    Number(document.getElementById("paymentAmount").value);
+
+  const status =
+    document.getElementById("paymentStatus").value;
+
+  if(!student || !amount){
+
+    alert("Please enter the student name and amount.");
+
+    return;
+
+  }
+
+  const payments = getPayments();
+
+  payments.push({
+
+    student:student,
+
+    course:course,
+
+    amount:amount,
+
+    status:status
+
+  });
+
+  localStorage.setItem(
+    "nacelPayments",
+    JSON.stringify(payments)
+  );
+
+  document.getElementById("paymentStudent").value="";
+
+  document.getElementById("paymentAmount").value="";
+
+  renderPayments();
+
+  alert("Payment record added successfully.");
+
+}
+
+
+function deletePayment(index){
+
+  const payments = getPayments();
+
+  payments.splice(index,1);
+
+  localStorage.setItem(
+    "nacelPayments",
+    JSON.stringify(payments)
+  );
+
+  renderPayments();
+
+}
+
+
+function renderPayments(){
+
+  const payments = getPayments();
+
+  const table =
+    document.getElementById("paymentTable");
+
+  table.innerHTML="";
+
+  let paid=0;
+
+  let pending=0;
+
+  let revenue=0;
+
+
+  if(payments.length === 0){
+
+    table.innerHTML =
+      '<tr><td colspan="5">No payment records yet.</td></tr>';
+
+  }
+
+
+  payments.forEach(function(payment,index){
+
+    if(payment.status === "Paid"){
+
+      paid++;
+
+      revenue += Number(payment.amount);
+
+    }else{
+
+      pending++;
+
+    }
+
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+
+      <td>${payment.student}</td>
+
+      <td>${payment.course}</td>
+
+      <td>₦${Number(payment.amount).toLocaleString()}</td>
+
+      <td class="${payment.status === "Paid" ? "success" : "pending"}">
+        ${payment.status}
+      </td>
+
+      <td>
+        <button
+          class="danger small-btn"
+          onclick="deletePayment(${index})">
+          Delete
+        </button>
+      </td>
+
+    `;
+
+    table.appendChild(row);
+
+  });
+
+
+  document.getElementById("paidCount").innerText=paid;
+
+  document.getElementById("pendingCount").innerText=pending;
+
+  document.getElementById("revenueTotal").innerText =
+    "₦" + revenue.toLocaleString();
+
+
+  document.getElementById("paymentPaid").innerText=paid;
+
+  document.getElementById("paymentPending").innerText=pending;
+
+  document.getElementById("paymentRevenue").innerText =
+    "₦" + revenue.toLocaleString();
+
+
+  document.getElementById("studentCount").innerText =
+    payments.length;
+
+}
+
+
+function loadPayments(){
+
+  renderPayments();
+
+}
+
 
 </script>
 
 </body>
-</html>
+  </html>
