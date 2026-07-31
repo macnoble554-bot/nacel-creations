@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Enroll | NACEL. — Create. Build. Elevate.</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #090909;
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  padding: 25px 7%;
+  border-bottom: 1px solid #242424;
+  background: #090909;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: #d9b43b;
+}
+
+.container {
+  width: min(1000px, 90%);
+  margin: auto;
+  padding: 65px 0 90px;
+}
+
+.back {
+  display: inline-block;
+  color: #bdbdbd;
+  margin-bottom: 30px;
+  transition: .2s;
+}
+
+.back:hover {
+  color: #d9b43b;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid #65551f;
+  color: #d9b43b;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(38px, 7vw, 64px);
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  color: #aaa;
+  max-width: 650px;
+  margin: auto;
+  font-size: 17px;
+}
+
+.card {
+  background: #111111;
+  border: 1px solid #292929;
+  border-radius: 24px;
+  padding: 35px;
+  margin-bottom: 25px;
+}
+
+.card h2 {
+  margin-bottom: 8px;
+  font-size: 25px;
+}
+
+.card-subtitle {
+  color: #999;
+  margin-bottom: 28px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  background: #090909;
+  color: #fff;
+  border: 1px solid #343434;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 22px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #d9b43b;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.course {
+  border: 1px solid #303030;
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.course:hover {
+  border-color: #d9b43b;
+}
+
+.course input {
+  width: auto;
+  margin: 0 8px 0 0;
+}
+
+.course strong {
+  display: block;
+  margin-top: 10px;
+  color: #d9b43b;
+}
+
+.course small {
+  color: #999;
+}
+
+.price {
+  border-top: 1px solid #2b2b2b;
+  padding-top: 25px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.price span {
+  color: #aaa;
+}
+
+.price strong {
+  font-size: 27px;
+  color: #d9b43b;
+}
+
+.payment-box {
+  background: #0b0b0b;
+  border: 1px solid #4b3d17;
+  border-radius: 18px;
+  padding: 25px;
+  margin-top: 25px;
+}
+
+.payment-box h3 {
+  color: #d9b43b;
+  margin-bottom: 15px;
+}
+
+.payment-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #252525;
+  padding: 13px 0;
+}
+
+.payment-row:last-child {
+  border-bottom: none;
+}
+
+.payment-row span:first-child {
+  color: #999;
+}
+
+.account-number {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.notice {
+  background: #17140b;
+  border-left: 3px solid #d9b43b;
+  padding: 18px;
+  margin-top: 20px;
+  color: #c8c8c8;
+  border-radius: 8px;
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 20px;
+  background: #d9b43b;
+  color: #080808;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn:hover {
+  background: #e8c652;
+}
+
+.secondary {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  color: #d9b43b;
+}
+
+footer {
+  border-top: 1px solid #242424;
+  padding: 30px 7%;
+  text-align: center;
+  color: #777;
+}
+
+footer strong {
+  color: #d9b43b;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding-top: 40px;
+  }
+
+  .card {
+    padding: 25px 20px;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .price {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .payment-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">NACEL<span>.</span></a>
+</header>
+
+<main class="container">
+
+  <a href="index.html" class="back">← Back to NACEL</a>
+
+  <section class="hero">
+    <div class="badge">Start Your Journey</div>
+    <h1>Begin Your <span style="color:#d9b43b;">NACEL.</span> Journey.</h1>
+    <p>
+      Choose your course, provide your details, and follow the payment
+      instructions to begin your learning journey with NACEL.
+    </p>
+  </section>
+
+  <section class="card">
+
+    <h2>Choose Your Course</h2>
+    <p class="card-subtitle">
+      Every programme runs for two months.
+    </p>
+
+    <div class="course-grid">
+
+      <label class="course">
+        <input type="radio" name="course" value="Graphic Design" checked>
+        Graphic Design
+        <strong>₦40,000</strong>
+        <small>2-month programme</small>
+      </label>
+
+      <label class="course">
+        <input type="radio" name="course" value="Web Development">
+        Web Development
+        <strong>₦40,000</strong>
+        <small>2-month programme</small>
+      </label>
+
+      <label class="course">
+        <input type="radio" name="course" value="AI & Automatics">
+        AI & Automatics
+        <strong>₦40,000</strong>
+        <small>2-month programme</small>
+      </label>
+
+    </div>
+
+    <div class="price">
+      <span>Programme Fee</span>
+      <strong>₦40,000</strong>
+    </div>
+
+  </section>
+
+  <section class="card">
+
+    <h2>Your Information</h2>
+    <p class="card-subtitle">
+      Enter accurate details so we can create your student profile.
+    </p>
+
+    <form onsubmit="showPayment(event)">
+
+      <label for="name">Full Name</label>
+      <input
+        id="name"
+        type="text"
+        placeholder="Enter your full name"
+        required
+      >
+
+      <label for="email">Email Address</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="Enter your email address"
+        required
+      >
+
+      <label for="phone">Phone Number</label>
+      <input
+        id="phone"
+        type="tel"
+        placeholder="08012345678"
+        required
+      >
+
+      <label for="message">Anything you'd like us to know? (Optional)</label>
+      <textarea
+        id="message"
+        rows="4"
+        placeholder="Tell us anything important about your enrollment..."
+      ></textarea>
+
+      <button class="btn" type="submit">
+        Continue to Payment
+      </button>
+
+    </form>
+
+  </section>
+
+  <section class="card" id="paymentSection" style="display:none;">
+
+    <h2>Complete Your Enrollment</h2>
+
+    <p class="card-subtitle">
+      Make the payment using the account details below.
+      Your enrollment will be activated after payment is verified.
+    </p>
+
+    <div class="payment-box">
+
+      <h3>Bank Transfer Details</h3>
+
+      <div class="payment-row">
+        <span>Bank Name</span>
+        <strong>YOUR BANK</strong>
+      </div>
+
+      <div class="payment-row">
+        <span>Account Name</span>
+        <strong>NACEL CREATIONS</strong>
+      </div>
+
+      <div class="payment-row">
+        <span>Account Number</span>
+        <strong class="account-number">XXXXXXXXXX</strong>
+      </div>
+
+      <div class="payment-row">
+        <span>Amount</span>
+        <strong style="color:#d9b43b;">₦40,000</strong>
+      </div>
+
+    </div>
+
+    <div class="notice">
+      <strong>Important:</strong>
+      Please make sure the amount sent matches your agreed course fee.
+      After payment, send your payment receipt together with your full
+      name and selected course to NACEL for verification.
+    </div>
+
+    <button class="btn" onclick="contactFounder()">
+      I've Made Payment — Contact NACEL
+    </button>
+
+    <a href="index.html" class="secondary">
+      Return to Homepage
+    </a>
+
+  </section>
+
+  <section class="card">
+
+    <h2>Need a Flexible Payment Arrangement?</h2>
+
+    <p class="card-subtitle">
+      If ₦40,000 is difficult for you, you can contact NACEL privately
+      before making payment to discuss your options.
+    </p>
+
+    <button class="btn" onclick="contactFounder()">
+      Contact Founder Privately
+    </button>
+
+  </section>
+
+</main>
+
+<footer>
+  © 2026 <strong>NACEL CREATIONS</strong>. Create. Build. Elevate.
+</footer>
+
+<script>
+
+function showPayment(event) {
+  event.preventDefault();
+
+  const paymentSection = document.getElementById("paymentSection");
+
+  paymentSection.style.display = "block";
+
+  paymentSection.scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function contactFounder() {
+
+  const name = document.getElementById("name")?.value || "";
+  const phone = document.getElementById("phone")?.value || "";
+
+  const course = document.querySelector(
+    'input[name="course"]:checked'
+  )?.value || "a NACEL course";
+
+  const message =
+    "Hello NACEL, I would like to enroll in " +
+    course +
+    ". My name is " +
+    name +
+    ". My phone number is " +
+    phone +
+    ". I have made / would like to discuss payment.";
+
+  const whatsappNumber = "2347046784914";
+
+  window.open(
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
+
+</script>
+
+</body>
+  </html>
