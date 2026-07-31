@@ -15,15 +15,15 @@
 }
 
 body{
-  background:#f5f7fb;
+  background:#f4f6f8;
   color:#222;
 }
 
 .login{
   min-height:100vh;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   padding:20px;
   background:linear-gradient(135deg,#111827,#1f2937);
 }
@@ -39,6 +39,7 @@ body{
 }
 
 .login-box h1{
+  color:#111827;
   margin-bottom:8px;
 }
 
@@ -50,24 +51,26 @@ body{
 input,select,textarea{
   width:100%;
   padding:13px;
-  margin:7px 0 15px;
   border:1px solid #ddd;
   border-radius:10px;
+  margin:7px 0 14px;
   font-size:15px;
 }
 
 button{
   border:0;
   border-radius:10px;
-  padding:13px 18px;
+  padding:12px 18px;
   cursor:pointer;
   font-weight:bold;
 }
 
-.login-btn,
-.save-btn{
+.login-btn,.save-btn{
   background:#111827;
   color:white;
+}
+
+.login-btn{
   width:100%;
 }
 
@@ -78,156 +81,148 @@ button{
 header{
   background:#111827;
   color:white;
-  padding:22px;
+  padding:20px;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 .header-inner{
   max-width:1200px;
   margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
 }
 
 header h1{
-  font-size:25px;
-}
-
-header p{
-  color:#cbd5e1;
-  margin-top:5px;
+  font-size:22px;
 }
 
 .logout{
-  margin-top:15px;
-  background:#dc2626;
+  background:#ef4444;
   color:white;
 }
 
 .container{
-  max-width:1200px;
-  margin:auto;
-  padding:25px 15px 50px;
+  width:min(1200px,94%);
+  margin:25px auto;
 }
 
-.welcome{
+.hero{
   background:white;
   padding:25px;
   border-radius:18px;
   margin-bottom:20px;
-  box-shadow:0 5px 20px rgba(0,0,0,.05);
+  box-shadow:0 3px 15px rgba(0,0,0,.06);
 }
 
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
-  margin-bottom:25px;
-}
-
-.stat{
-  background:white;
-  padding:22px;
-  border-radius:15px;
-  box-shadow:0 5px 20px rgba(0,0,0,.05);
-}
-
-.stat h2{
-  font-size:28px;
-  margin-bottom:5px;
-}
-
-.stat p{
-  color:#666;
+.hero h2{
+  margin-bottom:8px;
 }
 
 .section{
   background:white;
-  padding:25px;
+  padding:22px;
   border-radius:18px;
-  margin-bottom:25px;
-  box-shadow:0 5px 20px rgba(0,0,0,.05);
+  margin-bottom:20px;
+  box-shadow:0 3px 15px rgba(0,0,0,.06);
 }
 
 .section h2{
-  margin-bottom:10px;
-}
-
-.description{
-  color:#666;
-  margin-bottom:20px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-}
-
-.card{
-  border:1px solid #e5e7eb;
-  border-radius:15px;
-  padding:20px;
-}
-
-.card h3{
   margin-bottom:8px;
 }
 
-.card p{
-  color:#666;
-  line-height:1.5;
-  margin-bottom:15px;
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-top:20px;
 }
 
-.action{
-  background:#111827;
-  color:white;
+.stat{
+  background:#f8fafc;
+  padding:20px;
+  border-radius:14px;
+  text-align:center;
 }
 
-.table-wrap{
-  width:100%;
+.stat h3{
+  font-size:28px;
+  margin-bottom:7px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+.table-wrapper{
   overflow-x:auto;
+  margin-top:20px;
 }
 
 table{
   width:100%;
-  min-width:650px;
   border-collapse:collapse;
-  margin-top:15px;
+  min-width:650px;
 }
 
 th,td{
+  padding:12px;
   border-bottom:1px solid #eee;
-  padding:13px;
   text-align:left;
 }
 
 th{
-  background:#f8fafc;
+  background:#111827;
+  color:white;
 }
 
-.danger{
-  background:#dc2626;
+.delete-btn{
+  background:#ef4444;
   color:white;
 }
 
 .small-btn{
-  padding:8px 11px;
-  font-size:13px;
+  padding:7px 10px;
+  font-size:12px;
 }
 
-.success{
-  color:#15803d;
-  font-weight:bold;
+.note{
+  background:#fff7ed;
+  border-left:4px solid #f59e0b;
+  padding:14px;
+  border-radius:8px;
+  margin-top:15px;
 }
 
-.pending{
-  color:#ca8a04;
-  font-weight:bold;
-}
+@media(max-width:700px){
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-footer{
-  text-align:center;
-  padding:25px;
-  color:#777;
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  header h1{
+    font-size:17px;
+  }
+
+  .header-inner{
+    align-items:flex-start;
+  }
 }
 </style>
 </head>
@@ -245,14 +240,23 @@ footer{
     <p>Nacel Creations Founder Dashboard</p>
 
     <input
-      type="password"
-      id="founderPassword"
-      placeholder="Enter founder password"
+      type="text"
+      id="founderUsername"
+      placeholder="Founder username"
     >
 
-    <button class="login-btn" onclick="loginFounder()">
+    <input
+      type="password"
+      id="founderPassword"
+      placeholder="Founder password"
+    >
+
+    <button class="login-btn" onclick="login()">
       Enter Founder Dashboard
     </button>
+
+    <p id="loginError"
+       style="color:#ef4444;margin-top:15px;"></p>
 
   </div>
 
@@ -267,11 +271,12 @@ footer{
 
   <div class="header-inner">
 
-    <h1>👑 Sir Noble Wisdom</h1>
+    <div>
+      <h1>👑 Sir Noble Wisdom</h1>
+      <small>Nacel Creations — Founder Dashboard</small>
+    </div>
 
-    <p>Founder & Director — Nacel Creations</p>
-
-    <button class="logout" onclick="logoutFounder()">
+    <button class="logout" onclick="logout()">
       Logout
     </button>
 
@@ -282,488 +287,388 @@ footer{
 
 <div class="container">
 
+<!-- OVERVIEW -->
 
-<!-- WELCOME -->
+<div class="hero">
 
-<div class="welcome">
+  <h2>Welcome, Founder.</h2>
 
-  <h2>Welcome back, Founder.</h2>
-
-  <p style="color:#666;margin-top:8px;">
-    Manage students, courses, payments, assignments,
-    notes, announcements and curriculum from one place.
+  <p>
+    Manage students, payments, learning materials,
+    assignments, announcements and curriculum from one place.
   </p>
-
-</div>
-
-
-<!-- STATS -->
-
-<div class="stats">
-
-  <div class="stat">
-    <h2 id="studentCount">0</h2>
-    <p>Total Students</p>
-  </div>
-
-  <div class="stat">
-    <h2 id="paidCount">0</h2>
-    <p>Paid Students</p>
-  </div>
-
-  <div class="stat">
-    <h2 id="pendingCount">0</h2>
-    <p>Pending Payments</p>
-  </div>
-
-  <div class="stat">
-    <h2 id="revenueTotal">₦0</h2>
-    <p>Total Revenue</p>
-  </div>
-
-</div>
-
-
-<!-- COURSES -->
-
-<div class="section">
-
-  <h2>🎓 Course Management</h2>
-
-  <p class="description">
-    Manage the courses currently offered by Nacel Creations.
-  </p>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>🎨 Graphic Design</h3>
-      <p>
-        Practical graphic design training for students.
-      </p>
-      <button class="action"
-      onclick="alert('Graphic Design course management opened.')">
-        Manage Course
-      </button>
-    </div>
-
-    <div class="card">
-      <h3>💻 Web Development</h3>
-      <p>
-        Learn how to build modern websites and web projects.
-      </p>
-      <button class="action"
-      onclick="alert('Web Development course management opened.')">
-        Manage Course
-      </button>
-    </div>
-
-    <div class="card">
-      <h3>🤖 AI & Automatics</h3>
-      <p>
-        Artificial Intelligence, automation and modern technology.
-      </p>
-      <button class="action"
-      onclick="alert('AI & Automatics course management opened.')">
-        Manage Course
-      </button>
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- STUDENT PROGRESS -->
-
-<div class="section">
-
-  <h2>📈 Student Progress</h2>
-
-  <p class="description">
-    Monitor how students are progressing through their courses.
-  </p>
-
-  <div class="table-wrap">
-
-    <table>
-
-      <thead>
-        <tr>
-          <th>Student</th>
-          <th>Course</th>
-          <th>Progress</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-
-      <tbody id="progressTable">
-
-        <tr>
-          <td colspan="4">
-            No student records yet.
-          </td>
-        </tr>
-
-      </tbody>
-
-    </table>
-
-  </div>
-
-</div>
-
-
-<!-- ANNOUNCEMENTS -->
-
-<div class="section">
-
-  <h2>📢 Announcements</h2>
-
-  <p class="description">
-    Create important announcements for your students.
-  </p>
-
-  <textarea
-    id="announcementText"
-    rows="5"
-    placeholder="Write announcement here..."
-  ></textarea>
-
-  <button class="save-btn" onclick="createAnnouncement()">
-    Publish Announcement
-  </button>
-
-</div>
-
-
-<!-- NOTES -->
-
-<div class="section">
-
-  <h2>📝 Notes & Learning Materials</h2>
-
-  <p class="description">
-    Add notes and learning resources for your students.
-  </p>
-
-  <input
-    id="noteTitle"
-    placeholder="Note title"
-  >
-
-  <textarea
-    id="noteContent"
-    rows="6"
-    placeholder="Write your lesson note..."
-  ></textarea>
-
-  <button class="save-btn" onclick="saveNote()">
-    Save Note
-  </button>
-
-</div>
-
-
-<!-- PDF / RESOURCE -->
-
-<div class="section">
-
-  <h2>📄 PDF Notes & Resources</h2>
-
-  <p class="description">
-    Add a title and link to a PDF or online learning resource.
-  </p>
-
-  <input
-    id="resourceTitle"
-    placeholder="Resource title"
-  >
-
-  <input
-    id="resourceLink"
-    placeholder="Paste PDF/resource link"
-  >
-
-  <button class="save-btn" onclick="saveResource()">
-    Add Resource
-  </button>
-
-</div>
-
-
-<!-- ASSIGNMENTS -->
-
-<div class="section">
-
-  <h2>📚 Assignments</h2>
-
-  <p class="description">
-    Create assignments and provide instructions for students.
-  </p>
-
-  <input
-    id="assignmentTitle"
-    placeholder="Assignment title"
-  >
-
-  <select id="assignmentCourse">
-
-    <option>Graphic Design</option>
-    <option>Web Development</option>
-    <option>AI & Automatics</option>
-
-  </select>
-
-  <textarea
-    id="assignmentInstructions"
-    rows="5"
-    placeholder="Write assignment instructions..."
-  ></textarea>
-
-  <button class="save-btn" onclick="createAssignment()">
-    Create Assignment
-  </button>
-
-</div>
-
-
-<!-- CURRICULUM -->
-
-<div class="section">
-
-  <h2>🗓️ Curriculum Planner</h2>
-
-  <p class="description">
-    Plan how many days students will learn each week
-    and prepare topics ahead of time.
-  </p>
-
-  <select id="curriculumCourse">
-
-    <option>Graphic Design</option>
-    <option>Web Development</option>
-    <option>AI & Automatics</option>
-
-  </select>
-
-  <select id="daysPerWeek">
-
-    <option>1 day per week</option>
-    <option>2 days per week</option>
-    <option>3 days per week</option>
-    <option>4 days per week</option>
-    <option>5 days per week</option>
-    <option>6 days per week</option>
-    <option>7 days per week</option>
-
-  </select>
-
-  <input
-    id="weekNumber"
-    placeholder="Week number e.g. Week 1"
-  >
-
-  <input
-    id="topic"
-    placeholder="Topic to teach"
-  >
-
-  <textarea
-    id="curriculumDetails"
-    rows="5"
-    placeholder="Additional teaching plan..."
-  ></textarea>
-
-  <button class="save-btn" onclick="saveCurriculum()">
-    Save Curriculum
-  </button>
-
-</div>
-
-
-<!-- ================= PAYMENT MANAGEMENT ================= -->
-
-<div class="section">
-
-  <h2>💰 Payment Management</h2>
-
-  <p class="description">
-    Track student payments, enrollment fees and payment status.
-  </p>
-
 
   <div class="stats">
 
     <div class="stat">
-      <h2 id="paymentPaid">0</h2>
+      <h3 id="studentCount">0</h3>
+      <p>Students</p>
+    </div>
+
+    <div class="stat">
+      <h3 id="paidCount">0</h3>
       <p>Paid Students</p>
     </div>
 
     <div class="stat">
-      <h2 id="paymentPending">0</h2>
+      <h3 id="pendingCount">0</h3>
       <p>Pending Payments</p>
     </div>
 
     <div class="stat">
-      <h2 id="paymentRevenue">₦0</h2>
+      <h3 id="revenueTotal">₦0</h3>
       <p>Total Revenue</p>
     </div>
 
   </div>
 
-
-  <h3 style="margin-bottom:15px;">
-    Add Payment Record
-  </h3>
-
-  <input
-    id="paymentStudent"
-    placeholder="Student name"
-  >
-
-  <select id="paymentCourse">
-
-    <option>Graphic Design</option>
-    <option>Web Development</option>
-    <option>AI & Automatics</option>
-
-  </select>
-
-  <input
-    id="paymentAmount"
-    type="number"
-    placeholder="Amount paid (₦)"
-  >
-
-  <select id="paymentStatus">
-
-    <option>Paid</option>
-    <option>Pending</option>
-
-  </select>
-
-  <button class="save-btn" onclick="addPayment()">
-    Add Payment Record
-  </button>
-
-
-  <div class="table-wrap">
-
-    <table>
-
-      <thead>
-
-        <tr>
-          <th>Student</th>
-          <th>Course</th>
-          <th>Amount</th>
-          <th>Status</th>
-          <th>Action</th>
-        </tr>
-
-      </thead>
-
-      <tbody id="paymentTable">
-
-        <tr>
-          <td colspan="5">
-            No payment records yet.
-          </td>
-        </tr>
-
-      </tbody>
-
-    </table>
-
-  </div>
-
 </div>
 
 
-<!-- PAYMENT DETAILS -->
+<!-- ================= STUDENTS ================= -->
 
 <div class="section">
 
-  <h2>🏦 Enrollment Payment Information</h2>
+<h2>👨‍🎓 Student Management</h2>
 
-  <p class="description">
-    These are the payment details students can use when enrolling.
-  </p>
+<p style="color:#666;margin-bottom:15px;">
+Add and monitor students.
+</p>
 
-  <!-- PAYMENT DETAILS WILL BE PLACED HERE -->
+<div class="form-grid">
 
-  <div class="card">
+<input id="studentName"
+placeholder="Student full name">
 
-    <h3>Bank Transfer</h3>
+<input id="studentCourse"
+placeholder="Course">
 
-    <p>
-      <strong>Bank:</strong>
-      <span id="bankName">OPay</span>
-    </p>
+<input id="studentProgress"
+type="number"
+min="0"
+max="100"
+placeholder="Progress %">
 
-    <p>
-      <strong>Account Name:</strong>
-      <span id="accountName">NOBLE OKECHUKWU</span>
-    </p>
+<button class="save-btn"
+onclick="addStudent()">
+Add Student
+</button>
 
-    <p>
-      <strong>Account Number:</strong>
-      <span id="accountNumber">6583867687</span>
-    </p>
+</div>
 
-  </div>
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Course</th>
+<th>Progress</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="studentTable"></tbody>
+
+</table>
+
+</div>
 
 </div>
 
 
+<!-- ================= PAYMENTS ================= -->
+
+<div class="section">
+
+<h2>💰 Payment Management</h2>
+
+<p style="color:#666;margin-bottom:15px;">
+Record payments received from students and monitor pending payments.
+</p>
+
+<div class="form-grid">
+
+<input
+id="paymentStudent"
+placeholder="Student name">
+
+<select id="paymentCourse">
+
+<option>Graphic Design</option>
+<option>Web Development</option>
+<option>AI & Automatics</option>
+
+</select>
+
+<input
+id="paymentAmount"
+type="number"
+placeholder="Amount paid (₦)">
+
+<select id="paymentStatus">
+
+<option>Paid</option>
+<option>Pending</option>
+
+</select>
+
+<button class="save-btn"
+onclick="addPayment()">
+Add Payment Record
+</button>
+
 </div>
 
 
-<footer>
-  © 2026 Nacel Creations — Founder Dashboard
-</footer>
+<div class="note">
+
+<strong>Payment verification:</strong>
+
+Students currently pay through the enrollment
+instructions and contact the founder for verification.
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Student</th>
+<th>Course</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="paymentTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- ================= ANNOUNCEMENTS ================= -->
+
+<div class="section">
+
+<h2>📢 Announcements</h2>
+
+<textarea
+id="announcementText"
+rows="4"
+placeholder="Write an announcement for students..."></textarea>
+
+<button class="save-btn"
+onclick="saveAnnouncement()">
+Publish Announcement
+</button>
+
+<div id="announcementList"
+style="margin-top:15px;"></div>
+
+</div>
+
+
+<!-- ================= ASSIGNMENTS ================= -->
+
+<div class="section">
+
+<h2>📝 Assignments</h2>
+
+<div class="form-grid">
+
+<input
+id="assignmentTitle"
+placeholder="Assignment title">
+
+<input
+id="assignmentCourse"
+placeholder="Course">
+
+<textarea
+class="full"
+id="assignmentDetails"
+rows="4"
+placeholder="Assignment instructions..."></textarea>
+
+<button class="save-btn"
+onclick="saveAssignment()">
+Add Assignment
+</button>
+
+</div>
+
+<div id="assignmentList"
+style="margin-top:20px;"></div>
+
+</div>
+
+
+<!-- ================= NOTES ================= -->
+
+<div class="section">
+
+<h2>📚 Notes & Learning Materials</h2>
+
+<div class="form-grid">
+
+<input
+id="noteTitle"
+placeholder="Note title">
+
+<input
+id="noteCourse"
+placeholder="Course">
+
+<input
+id="noteLink"
+placeholder="PDF / Google Drive / document link">
+
+<button class="save-btn"
+onclick="saveNote()">
+Add Note
+</button>
+
+</div>
+
+<div id="notesList"
+style="margin-top:20px;"></div>
+
+</div>
+
+
+<!-- ================= CURRICULUM ================= -->
+
+<div class="section">
+
+<h2>🗓️ Curriculum Planner</h2>
+
+<p style="color:#666;margin-bottom:15px;">
+Plan what students should learn ahead of time.
+</p>
+
+<div class="form-grid">
+
+<input
+id="weekNumber"
+placeholder="Week / Day">
+
+<input
+id="topic"
+placeholder="Topic to teach">
+
+<textarea
+class="full"
+id="curriculumDetails"
+rows="4"
+placeholder="Teaching details, practical work, exercises..."></textarea>
+
+<button class="save-btn"
+onclick="saveCurriculum()">
+Save Curriculum
+</button>
+
+</div>
+
+<div id="curriculumList"
+style="margin-top:20px;"></div>
+
+</div>
+
+
+<!-- ================= BUSINESS INFO ================= -->
+
+<div class="section">
+
+<h2>🏢 Nacel Creations Information</h2>
+
+<p><strong>Founder:</strong> Sir Noble Wisdom</p>
+
+<p style="margin-top:8px;">
+<strong>Courses:</strong>
+Graphic Design • Web Development • AI & Automatics
+</p>
+
+<p style="margin-top:8px;">
+<strong>Standard Programme Fee:</strong> ₦40,000 / 2 months
+</p>
+
+<p style="margin-top:8px;">
+<strong>Payment Bank:</strong> OPay
+</p>
+
+<p style="margin-top:8px;">
+<strong>Account Name:</strong> NOBLE OKECHUKWU
+</p>
+
+<p style="margin-top:8px;">
+<strong>Account Number:</strong> 6583867687
+</p>
+
+</div>
+
+</div>
 
 </div>
 
 
 <script>
 
-/* =====================================
+/* ==================================================
    FOUNDER LOGIN
-===================================== */
+   ================================================== */
 
 /*
-   CHANGE ONLY THE TEXT INSIDE THE QUOTES
-   TO YOUR EXISTING FOUNDER PASSWORD.
+IMPORTANT:
+Replace ONLY the value inside the quotes below
+with the SAME founder password you used previously.
 */
 
-const FOUNDER_PASSWORD = "CHANGE_THIS_PASSWORD";
+const FOUNDER_USERNAME = "Sir Noble Wisdom";
+
+const FOUNDER_PASSWORD = "YOUR_EXISTING_FOUNDER_PASSWORD";
 
 
-function loginFounder(){
+function login(){
 
-  const entered =
+  const username =
+    document.getElementById("founderUsername").value.trim();
+
+  const password =
     document.getElementById("founderPassword").value;
 
-  if(entered === FOUNDER_PASSWORD){
+  if(
+    username === FOUNDER_USERNAME &&
+    password === FOUNDER_PASSWORD
+  ){
 
     document.getElementById("loginPage").style.display="none";
 
     document.getElementById("dashboard").style.display="block";
 
-    loadPayments();
+    loadEverything();
 
   }else{
 
-    alert("Incorrect founder password.");
+    document.getElementById("loginError").innerText =
+      "Incorrect founder login details.";
 
   }
 
 }
 
 
-function logoutFounder(){
+function logout(){
 
   document.getElementById("dashboard").style.display="none";
 
@@ -774,204 +679,120 @@ function logoutFounder(){
 }
 
 
-/* =====================================
-   ANNOUNCEMENT
-===================================== */
+/* ==================================================
+   STUDENTS
+   ================================================== */
 
-function createAnnouncement(){
+function getStudents(){
 
-  const text =
-    document.getElementById("announcementText").value.trim();
-
-  if(!text){
-
-    alert("Please write an announcement.");
-
-    return;
-
-  }
-
-  localStorage.setItem("lastAnnouncement",text);
-
-  let count =
-    Number(localStorage.getItem("announcementCount") || 0);
-
-  count++;
-
-  localStorage.setItem("announcementCount",count);
-
-  alert("Announcement published successfully.");
-
-  document.getElementById("announcementText").value="";
-
-}
-
-
-/* =====================================
-   NOTES
-===================================== */
-
-function saveNote(){
-
-  const title =
-    document.getElementById("noteTitle").value.trim();
-
-  const content =
-    document.getElementById("noteContent").value.trim();
-
-  if(!title || !content){
-
-    alert("Please enter the note title and content.");
-
-    return;
-
-  }
-
-  localStorage.setItem("lastNoteTitle",title);
-
-  localStorage.setItem("lastNoteContent",content);
-
-  alert("Note saved successfully.");
-
-  document.getElementById("noteTitle").value="";
-
-  document.getElementById("noteContent").value="";
-
-}
-
-
-/* =====================================
-   RESOURCE
-===================================== */
-
-function saveResource(){
-
-  const title =
-    document.getElementById("resourceTitle").value.trim();
-
-  const link =
-    document.getElementById("resourceLink").value.trim();
-
-  if(!title || !link){
-
-    alert("Please enter the resource title and link.");
-
-    return;
-
-  }
-
-  localStorage.setItem("resourceTitle",title);
-
-  localStorage.setItem("resourceLink",link);
-
-  alert("Resource saved successfully.");
-
-  document.getElementById("resourceTitle").value="";
-
-  document.getElementById("resourceLink").value="";
-
-}
-
-
-/* =====================================
-   ASSIGNMENT
-===================================== */
-
-function createAssignment(){
-
-  const title =
-    document.getElementById("assignmentTitle").value.trim();
-
-  const course =
-    document.getElementById("assignmentCourse").value;
-
-  const instructions =
-    document.getElementById("assignmentInstructions").value.trim();
-
-  if(!title || !instructions){
-
-    alert("Please enter the assignment title and instructions.");
-
-    return;
-
-  }
-
-  let count =
-    Number(localStorage.getItem("assignmentCount") || 0);
-
-  count++;
-
-  localStorage.setItem("assignmentCount",count);
-
-  alert(
-    "Assignment created successfully.\n\n" +
-    course + " — " + title
+  return JSON.parse(
+    localStorage.getItem("nacelStudents") || "[]"
   );
 
-  document.getElementById("assignmentTitle").value="";
-
-  document.getElementById("assignmentInstructions").value="";
-
 }
 
 
-/* =====================================
-   CURRICULUM
-===================================== */
+function addStudent(){
 
-function saveCurriculum(){
+  const name =
+    document.getElementById("studentName").value.trim();
 
   const course =
-    document.getElementById("curriculumCourse").value;
+    document.getElementById("studentCourse").value.trim();
 
-  const days =
-    document.getElementById("daysPerWeek").value;
+  const progress =
+    document.getElementById("studentProgress").value || 0;
 
-  const week =
-    document.getElementById("weekNumber").value.trim();
+  if(!name || !course){
 
-  const topic =
-    document.getElementById("topic").value.trim();
-
-  const details =
-    document.getElementById("curriculumDetails").value.trim();
-
-  if(!week || !topic){
-
-    alert("Please enter the week and topic.");
+    alert("Please enter the student's name and course.");
 
     return;
 
   }
 
-  localStorage.setItem("curriculumCourse",course);
+  const students=getStudents();
 
-  localStorage.setItem("curriculumDays",days);
+  students.push({
+    id:Date.now(),
+    name:name,
+    course:course,
+    progress:Number(progress)
+  });
 
-  localStorage.setItem("curriculumWeek",week);
-
-  localStorage.setItem("curriculumTopic",topic);
-
-  localStorage.setItem("curriculumDetails",details);
-
-  alert(
-    "Curriculum saved successfully.\n\n" +
-    course + "\n" +
-    week + " — " + topic
+  localStorage.setItem(
+    "nacelStudents",
+    JSON.stringify(students)
   );
 
-  document.getElementById("weekNumber").value="";
+  document.getElementById("studentName").value="";
+  document.getElementById("studentCourse").value="";
+  document.getElementById("studentProgress").value="";
 
-  document.getElementById("topic").value="";
-
-  document.getElementById("curriculumDetails").value="";
+  renderStudents();
 
 }
 
 
-/* =====================================
-   PAYMENT MANAGEMENT
-===================================== */
+function deleteStudent(id){
+
+  let students=getStudents();
+
+  students=students.filter(s=>s.id!==id);
+
+  localStorage.setItem(
+    "nacelStudents",
+    JSON.stringify(students)
+  );
+
+  renderStudents();
+
+}
+
+
+function renderStudents(){
+
+  const students=getStudents();
+
+  const table=document.getElementById("studentTable");
+
+  table.innerHTML="";
+
+  students.forEach(student=>{
+
+    table.innerHTML += `
+
+      <tr>
+
+        <td>${escapeHTML(student.name)}</td>
+
+        <td>${escapeHTML(student.course)}</td>
+
+        <td>${student.progress}%</td>
+
+        <td>
+          <button
+          class="delete-btn small-btn"
+          onclick="deleteStudent(${student.id})">
+          Delete
+          </button>
+        </td>
+
+      </tr>
+
+    `;
+
+  });
+
+  document.getElementById("studentCount").innerText =
+    students.length;
+
+}
+
+
+/* ==================================================
+   PAYMENTS
+   ================================================== */
 
 function getPayments(){
 
@@ -998,15 +819,17 @@ function addPayment(){
 
   if(!student || !amount){
 
-    alert("Please enter the student name and amount.");
+    alert("Please enter the student and amount.");
 
     return;
 
   }
 
-  const payments = getPayments();
+  const payments=getPayments();
 
   payments.push({
+
+    id:Date.now(),
 
     student:student,
 
@@ -1024,21 +847,18 @@ function addPayment(){
   );
 
   document.getElementById("paymentStudent").value="";
-
   document.getElementById("paymentAmount").value="";
 
   renderPayments();
 
-  alert("Payment record added successfully.");
-
 }
 
 
-function deletePayment(index){
+function deletePayment(id){
 
-  const payments = getPayments();
+  let payments=getPayments();
 
-  payments.splice(index,1);
+  payments=payments.filter(p=>p.id!==id);
 
   localStorage.setItem(
     "nacelPayments",
@@ -1052,35 +872,22 @@ function deletePayment(index){
 
 function renderPayments(){
 
-  const payments = getPayments();
+  const payments=getPayments();
 
-  const table =
-    document.getElementById("paymentTable");
+  const table=document.getElementById("paymentTable");
 
   table.innerHTML="";
 
   let paid=0;
-
   let pending=0;
-
   let revenue=0;
 
+  payments.forEach(payment=>{
 
-  if(payments.length === 0){
-
-    table.innerHTML =
-      '<tr><td colspan="5">No payment records yet.</td></tr>';
-
-  }
-
-
-  payments.forEach(function(payment,index){
-
-    if(payment.status === "Paid"){
+    if(payment.status==="Paid"){
 
       paid++;
-
-      revenue += Number(payment.amount);
+      revenue+=Number(payment.amount);
 
     }else{
 
@@ -1088,66 +895,450 @@ function renderPayments(){
 
     }
 
+    table.innerHTML += `
 
-    const row = document.createElement("tr");
+      <tr>
 
-    row.innerHTML = `
+        <td>${escapeHTML(payment.student)}</td>
 
-      <td>${payment.student}</td>
+        <td>${escapeHTML(payment.course)}</td>
 
-      <td>${payment.course}</td>
+        <td>₦${Number(payment.amount).toLocaleString()}</td>
 
-      <td>₦${Number(payment.amount).toLocaleString()}</td>
+        <td>${payment.status}</td>
 
-      <td class="${payment.status === "Paid" ? "success" : "pending"}">
-        ${payment.status}
-      </td>
+        <td>
 
-      <td>
-        <button
-          class="danger small-btn"
-          onclick="deletePayment(${index})">
+          <button
+          class="delete-btn small-btn"
+          onclick="deletePayment(${payment.id})">
           Delete
-        </button>
-      </td>
+          </button>
+
+        </td>
+
+      </tr>
 
     `;
 
-    table.appendChild(row);
-
   });
-
 
   document.getElementById("paidCount").innerText=paid;
 
   document.getElementById("pendingCount").innerText=pending;
 
   document.getElementById("revenueTotal").innerText =
-    "₦" + revenue.toLocaleString();
-
-
-  document.getElementById("paymentPaid").innerText=paid;
-
-  document.getElementById("paymentPending").innerText=pending;
-
-  document.getElementById("paymentRevenue").innerText =
-    "₦" + revenue.toLocaleString();
-
-
-  document.getElementById("studentCount").innerText =
-    payments.length;
+    "₦"+revenue.toLocaleString();
 
 }
 
 
-function loadPayments(){
+/* ==================================================
+   ANNOUNCEMENTS
+   ================================================== */
+
+function saveAnnouncement(){
+
+  const text =
+    document.getElementById("announcementText").value.trim();
+
+  if(!text){
+
+    alert("Write an announcement first.");
+
+    return;
+
+  }
+
+  const list=JSON.parse(
+    localStorage.getItem("nacelAnnouncements") || "[]"
+  );
+
+  list.push({
+
+    id:Date.now(),
+
+    text:text,
+
+    date:new Date().toLocaleDateString()
+
+  });
+
+  localStorage.setItem(
+    "nacelAnnouncements",
+    JSON.stringify(list)
+  );
+
+  document.getElementById("announcementText").value="";
+
+  renderAnnouncements();
+
+}
+
+
+function deleteAnnouncement(id){
+
+  let list=JSON.parse(
+    localStorage.getItem("nacelAnnouncements") || "[]"
+  );
+
+  list=list.filter(x=>x.id!==id);
+
+  localStorage.setItem(
+    "nacelAnnouncements",
+    JSON.stringify(list)
+  );
+
+  renderAnnouncements();
+
+}
+
+
+function renderAnnouncements(){
+
+  const list=JSON.parse(
+    localStorage.getItem("nacelAnnouncements") || "[]"
+  );
+
+  const box=document.getElementById("announcementList");
+
+  box.innerHTML="";
+
+  list.forEach(item=>{
+
+    box.innerHTML += `
+
+      <div class="note">
+
+        <strong>${item.date}</strong>
+
+        <p style="margin:8px 0;">
+        ${escapeHTML(item.text)}
+        </p>
+
+        <button
+        class="delete-btn small-btn"
+        onclick="deleteAnnouncement(${item.id})">
+        Delete
+        </button>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+
+/* ==================================================
+   ASSIGNMENTS
+   ================================================== */
+
+function saveAssignment(){
+
+  const title =
+    document.getElementById("assignmentTitle").value.trim();
+
+  const course =
+    document.getElementById("assignmentCourse").value.trim();
+
+  const details =
+    document.getElementById("assignmentDetails").value.trim();
+
+  if(!title || !course || !details){
+
+    alert("Please complete all assignment fields.");
+
+    return;
+
+  }
+
+  const list=JSON.parse(
+    localStorage.getItem("nacelAssignments") || "[]"
+  );
+
+  list.push({
+
+    id:Date.now(),
+
+    title:title,
+
+    course:course,
+
+    details:details
+
+  });
+
+  localStorage.setItem(
+    "nacelAssignments",
+    JSON.stringify(list)
+  );
+
+  document.getElementById("assignmentTitle").value="";
+  document.getElementById("assignmentCourse").value="";
+  document.getElementById("assignmentDetails").value="";
+
+  renderAssignments();
+
+}
+
+
+function renderAssignments(){
+
+  const list=JSON.parse(
+    localStorage.getItem("nacelAssignments") || "[]"
+  );
+
+  const box=document.getElementById("assignmentList");
+
+  box.innerHTML="";
+
+  list.forEach(item=>{
+
+    box.innerHTML += `
+
+      <div class="note">
+
+        <strong>${escapeHTML(item.title)}</strong>
+
+        <p>${escapeHTML(item.course)}</p>
+
+        <p style="margin:8px 0;">
+        ${escapeHTML(item.details)}
+        </p>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+
+/* ==================================================
+   NOTES
+   ================================================== */
+
+function saveNote(){
+
+  const title =
+    document.getElementById("noteTitle").value.trim();
+
+  const course =
+    document.getElementById("noteCourse").value.trim();
+
+  const link =
+    document.getElementById("noteLink").value.trim();
+
+  if(!title || !course || !link){
+
+    alert("Please complete all note fields.");
+
+    return;
+
+  }
+
+  const list=JSON.parse(
+    localStorage.getItem("nacelNotes") || "[]"
+  );
+
+  list.push({
+
+    id:Date.now(),
+
+    title:title,
+
+    course:course,
+
+    link:link
+
+  });
+
+  localStorage.setItem(
+    "nacelNotes",
+    JSON.stringify(list)
+  );
+
+  document.getElementById("noteTitle").value="";
+  document.getElementById("noteCourse").value="";
+  document.getElementById("noteLink").value="";
+
+  renderNotes();
+
+}
+
+
+function renderNotes(){
+
+  const list=JSON.parse(
+    localStorage.getItem("nacelNotes") || "[]"
+  );
+
+  const box=document.getElementById("notesList");
+
+  box.innerHTML="";
+
+  list.forEach(item=>{
+
+    box.innerHTML += `
+
+      <div class="note">
+
+        <strong>${escapeHTML(item.title)}</strong>
+
+        <p>${escapeHTML(item.course)}</p>
+
+        <p style="margin-top:8px;">
+          <a href="${escapeAttribute(item.link)}"
+             target="_blank"
+             rel="noopener">
+             📄 Open Learning Material
+          </a>
+        </p>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+
+/* ==================================================
+   CURRICULUM
+   ================================================== */
+
+function saveCurriculum(){
+
+  const week =
+    document.getElementById("weekNumber").value.trim();
+
+  const topic =
+    document.getElementById("topic").value.trim();
+
+  const details =
+    document.getElementById("curriculumDetails").value.trim();
+
+  if(!week || !topic){
+
+    alert("Please enter the week/day and topic.");
+
+    return;
+
+  }
+
+  const list=JSON.parse(
+    localStorage.getItem("nacelCurriculum") || "[]"
+  );
+
+  list.push({
+
+    id:Date.now(),
+
+    week:week,
+
+    topic:topic,
+
+    details:details
+
+  });
+
+  localStorage.setItem(
+    "nacelCurriculum",
+    JSON.stringify(list)
+  );
+
+  document.getElementById("weekNumber").value="";
+  document.getElementById("topic").value="";
+  document.getElementById("curriculumDetails").value="";
+
+  renderCurriculum();
+
+}
+
+
+function renderCurriculum(){
+
+  const list=JSON.parse(
+    localStorage.getItem("nacelCurriculum") || "[]"
+  );
+
+  const box=document.getElementById("curriculumList");
+
+  box.innerHTML="";
+
+  list.forEach(item=>{
+
+    box.innerHTML += `
+
+      <div class="note">
+
+        <strong>${escapeHTML(item.week)} —
+        ${escapeHTML(item.topic)}</strong>
+
+        <p style="margin-top:8px;">
+        ${escapeHTML(item.details || "")}
+        </p>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+
+/* ==================================================
+   SECURITY HELPERS
+   ================================================== */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+function escapeAttribute(value){
+
+  return String(value)
+    .replace(/"/g,"%22")
+    .replace(/</g,"%3C")
+    .replace(/>/g,"%3E");
+
+}
+
+
+/* ==================================================
+   LOAD EVERYTHING
+   ================================================== */
+
+function loadEverything(){
+
+  renderStudents();
 
   renderPayments();
 
-}
+  renderAnnouncements();
 
+  renderAssignments();
+
+  renderNotes();
+
+  renderCurriculum();
+
+}
 
 </script>
 
 </body>
-  </html>
+</html>
