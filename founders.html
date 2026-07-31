@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nacel Creations | Founder Dashboard</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  color: #17202a;
+}
+
+/* LOGIN */
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #07111f, #102d4d);
+}
+
+.login-box {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 35px 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,.3);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0b5ed7;
+  margin-bottom: 8px;
+}
+
+.login-box h1 {
+  margin: 10px 0;
+}
+
+.login-box p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 13px 18px;
+  font-weight: bold;
+}
+
+.login-btn {
+  width: 100%;
+  background: #0b5ed7;
+  color: white;
+  margin-top: 10px;
+}
+
+.error {
+  color: #d00;
+  margin-top: 12px;
+  display: none;
+}
+
+/* DASHBOARD */
+.dashboard {
+  display: none;
+}
+
+header {
+  background: #07111f;
+  color: white;
+  padding: 20px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+header h1 {
+  font-size: 22px;
+}
+
+header p {
+  color: #b9c7d8;
+  margin-top: 5px;
+}
+
+.logout {
+  background: #dc3545;
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
+.welcome {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.welcome h2 {
+  color: #0b5ed7;
+  margin-bottom: 8px;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.stat {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.stat h3 {
+  font-size: 30px;
+  color: #0b5ed7;
+}
+
+.stat p {
+  color: #666;
+  margin-top: 5px;
+}
+
+/* SECTIONS */
+.section {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 22px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: #102d4d;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.card {
+  border: 1px solid #e4e8ed;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.card h3 {
+  color: #0b5ed7;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.action-btn {
+  background: #0b5ed7;
+  color: white;
+  margin-top: 12px;
+}
+
+/* TABLE */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  padding: 13px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f1f5f9;
+}
+
+/* FORMS */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.save-btn {
+  background: #198754;
+  color: white;
+  margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: #777;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: auto;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= LOGIN ================= -->
+
+<div class="login-screen" id="loginScreen">
+
+  <div class="login-box">
+
+    <div class="logo">NACEL CREATIONS</div>
+
+    <h1>Founder Access</h1>
+
+    <p>
+      Welcome, Sir Noble Wisdom.<br>
+      Enter your Founder Access Code.
+    </p>
+
+    <input
+      type="password"
+      id="founderCode"
+      placeholder="Enter Founder Code"
+    >
+
+    <button class="login-btn" onclick="login()">
+      Enter Founder Dashboard
+    </button>
+
+    <div class="error" id="error">
+      Incorrect Founder Code.
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<div class="dashboard" id="dashboard">
+
+<header>
+
+  <div class="header-content">
+
+    <div>
+      <h1>Nacel Creations — Founder Dashboard</h1>
+      <p>Welcome, Sir Noble Wisdom</p>
+    </div>
+
+    <button class="logout" onclick="logout()">
+      Logout
+    </button>
+
+  </div>
+
+</header>
+
+
+<div class="container">
+
+<!-- WELCOME -->
+
+<div class="welcome">
+
+  <h2>Founder Control Center</h2>
+
+  <p>
+    This is your central management area for Nacel Creations.
+    Monitor students, manage lessons, publish announcements,
+    create assignments, share notes and organize your curriculum.
+  </p>
+
+</div>
+
+
+<!-- STATISTICS -->
+
+<div class="stats">
+
+  <div class="stat">
+    <h3 id="studentCount">0</h3>
+    <p>Total Students</p>
+  </div>
+
+  <div class="stat">
+    <h3>3</h3>
+    <p>Active Courses</p>
+  </div>
+
+  <div class="stat">
+    <h3 id="assignmentCount">0</h3>
+    <p>Assignments</p>
+  </div>
+
+  <div class="stat">
+    <h3 id="announcementCount">0</h3>
+    <p>Announcements</p>
+  </div>
+
+</div>
+
+
+<!-- COURSES -->
+
+<div class="section">
+
+<h2>Courses</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Graphic Design</h3>
+<p>
+Teach students practical graphic design skills,
+creative thinking and professional design techniques.
+</p>
+<button class="action-btn"
+onclick="alert('Graphic Design course management opened.')">
+Manage Course
+</button>
+</div>
+
+<div class="card">
+<h3>Web Development</h3>
+<p>
+Teach students how to create websites, understand
+HTML, CSS, JavaScript and build real projects.
+</p>
+<button class="action-btn"
+onclick="alert('Web Development course management opened.')">
+Manage Course
+</button>
+</div>
+
+<div class="card">
+<h3>AI & Automatics</h3>
+<p>
+Introduce students to Artificial Intelligence,
+automation and practical modern technology.
+</p>
+<button class="action-btn"
+onclick="alert('AI & Automatics course management opened.')">
+Manage Course
+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- STUDENT PROGRESS -->
+
+<div class="section">
+
+<h2>Student Progress</h2>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+<tr>
+<th>Student</th>
+<th>Course</th>
+<th>Progress</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Sample Student</td>
+<td>Web Development</td>
+<td>65%</td>
+<td>Active</td>
+</tr>
+
+<tr>
+<td>Sample Student</td>
+<td>Graphic Design</td>
+<td>80%</td>
+<td>Active</td>
+</tr>
+
+<tr>
+<td>Sample Student</td>
+<td>AI & Automatics</td>
+<td>40%</td>
+<td>Needs Attention</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- ANNOUNCEMENT -->
+
+<div class="section">
+
+<h2>Publish Announcement</h2>
+
+<div class="form-grid">
+
+<input
+id="announcementTitle"
+placeholder="Announcement title"
+>
+
+<textarea
+class="full"
+id="announcementText"
+rows="4"
+placeholder="Write announcement for students..."
+></textarea>
+
+</div>
+
+<button class="save-btn" onclick="publishAnnouncement()">
+Publish Announcement
+</button>
+
+</div>
+
+
+<!-- NOTES -->
+
+<div class="section">
+
+<h2>Share Learning Notes</h2>
+
+<div class="form-grid">
+
+<input
+id="noteTitle"
+placeholder="Note title"
+>
+
+<select id="noteCourse">
+
+<option>Graphic Design</option>
+<option>Web Development</option>
+<option>AI & Automatics</option>
+
+</select>
+
+<textarea
+class="full"
+id="noteContent"
+rows="6"
+placeholder="Write your lesson notes here..."
+></textarea>
+
+</div>
+
+<button class="save-btn" onclick="saveNote()">
+Save Notes
+</button>
+
+</div>
+
+
+<!-- PDF / RESOURCES -->
+
+<div class="section">
+
+<h2>Learning Resources</h2>
+
+<p>
+Add links to PDF notes, learning materials, documents
+and other resources for students.
+</p>
+
+<input
+id="resourceTitle"
+placeholder="Resource name"
+>
+
+<input
+id="resourceLink"
+placeholder="Paste PDF / document link"
+>
+
+<button class="action-btn" onclick="addResource()">
+Add Resource
+</button>
+
+</div>
+
+
+<!-- ASSIGNMENTS -->
+
+<div class="section">
+
+<h2>Create Assignment</h2>
+
+<div class="form-grid">
+
+<input
+id="assignmentTitle"
+placeholder="Assignment title"
+>
+
+<select id="assignmentCourse">
+
+<option>Graphic Design</option>
+<option>Web Development</option>
+<option>AI & Automatics</option>
+
+</select>
+
+<textarea
+class="full"
+id="assignmentDescription"
+rows="5"
+placeholder="Write assignment instructions..."
+></textarea>
+
+</div>
+
+<button class="save-btn" onclick="createAssignment()">
+Create Assignment
+</button>
+
+</div>
+
+
+<!-- CURRICULUM -->
+
+<div class="section">
+
+<h2>Curriculum Planner</h2>
+
+<p style="margin-bottom:15px;color:#666;">
+Plan how many days students will learn each week and
+prepare topics ahead of time.
+</p>
+
+<div class="form-grid">
+
+<select id="curriculumCourse">
+
+<option>Graphic Design</option>
+<option>Web Development</option>
+<option>AI & Automatics</option>
+
+</select>
+
+<select id="daysPerWeek">
+
+<option>1 day per week</option>
+<option>2 days per week</option>
+<option>3 days per week</option>
+<option>4 days per week</option>
+<option>5 days per week</option>
+<option>6 days per week</option>
+<option>7 days per week</option>
+
+</select>
+
+<input
+id="weekNumber"
+placeholder="Week number e.g. Week 1"
+>
+
+<input
+id="topic"
+placeholder="Topic to teach"
+>
+
+<textarea
+class="full"
+id="curriculumDetails"
+rows="4"
+placeholder="Lesson objectives / details..."
+></textarea>
+
+</div>
+
+<button class="save-btn" onclick="saveCurriculum()">
+Save Curriculum
+</button>
+
+</div>
+
+
+<!-- FOUNDER PROFILE -->
+
+<div class="section">
+
+<h2>Founder Profile</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Sir Noble Wisdom</h3>
+
+<p>
+Founder of Nacel Creations.
+</p>
+
+<p style="margin-top:10px;">
+A passionate lover of creativity, driven by the desire
+to express ideas in his own unique way.
+</p>
+
+<p style="margin-top:10px;">
+<strong>Philosophy:</strong><br>
+Create. Build. Elevate.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Vision</h3>
+
+<p>
+To help people develop practical digital skills,
+turn ideas into real projects and build a better future
+through technology and creativity.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Founder Responsibilities</h3>
+
+<p>
+✓ Monitor students<br>
+✓ Track progress<br>
+✓ Manage courses<br>
+✓ Create curriculum<br>
+✓ Publish announcements<br>
+✓ Give notes<br>
+✓ Share PDF resources<br>
+✓ Create assignments
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+© 2026 Nacel Creations — Create. Build. Elevate.
+</footer>
+
+</div>
+
+
+<script>
+
+/* ================= FOUNDER CODE =================
+   Change this code whenever you want.
+*/
+
+const FOUNDER_CODE = "NACEL2026";
+
+
+function login() {
+
+  const enteredCode =
+    document.getElementById("founderCode").value;
+
+  if (enteredCode === FOUNDER_CODE) {
+
+    document.getElementById("loginScreen").style.display = "none";
+
+    document.getElementById("dashboard").style.display = "block";
+
+    localStorage.setItem("nacelFounderLoggedIn", "true");
+
+  } else {
+
+    document.getElementById("error").style.display = "block";
+
+  }
+
+}
+
+
+function logout() {
+
+  localStorage.removeItem("nacelFounderLoggedIn");
+
+  document.getElementById("dashboard").style.display = "none";
+
+  document.getElementById("loginScreen").style.display = "flex";
+
+}
+
+
+/* Keep founder logged in on the same device */
+
+if (localStorage.getItem("nacelFounderLoggedIn") === "true") {
+
+  document.getElementById("loginScreen").style.display = "none";
+
+  document.getElementById("dashboard").style.display = "block";
+
+}
+
+
+/* ANNOUNCEMENT */
+
+function publishAnnouncement() {
+
+  const title =
+    document.getElementById("announcementTitle").value;
+
+  const text =
+    document.getElementById("announcementText").value;
+
+  if (!title || !text) {
+
+    alert("Please enter the announcement title and message.");
+
+    return;
+
+  }
+
+  let count =
+    Number(localStorage.getItem("announcementCount") || 0);
+
+  count++;
+
+  localStorage.setItem("announcementCount", count);
+
+  document.getElementById("announcementCount").innerText = count;
+
+  alert("Announcement published successfully.");
+
+  document.getElementById("announcementTitle").value = "";
+
+  document.getElementById("announcementText").value = "";
+
+}
+
+
+/* NOTES */
+
+function saveNote() {
+
+  const title =
+    document.getElementById("noteTitle").value;
+
+  const content =
+    document.getElementById("noteContent").value;
+
+  if (!title || !content) {
+
+    alert("Please enter a note title and lesson content.");
+
+    return;
+
+  }
+
+  alert("Learning notes saved successfully.");
+
+  document.getElementById("noteTitle").value = "";
+
+  document.getElementById("noteContent").value = "";
+
+}
+
+
+/* RESOURCES */
+
+function addResource() {
+
+  const title =
+    document.getElementById("resourceTitle").value;
+
+  const link =
+    document.getElementById("resourceLink").value;
+
+  if (!title || !link) {
+
+    alert("Please enter the resource name and link.");
+
+    return;
+
+  }
+
+  alert("Learning resource added successfully.");
+
+  document.getElementById("resourceTitle").value = "";
+
+  document.getElementById("resourceLink").value = "";
+
+}
+
+
+/* ASSIGNMENT */
+
+function createAssignment() {
+
+  const title =
+    document.getElementById("assignmentTitle").value;
+
+  const description =
+    document.getElementById("assignmentDescription").value;
+
+  if (!title || !description) {
+
+    alert("Please enter the assignment details.");
+
+    return;
+
+  }
+
+  let count =
+    Number(localStorage.getItem("assignmentCount") || 0);
+
+  count++;
+
+  localStorage.setItem("assignmentCount", count);
+
+  document.getElementById("assignmentCount").innerText = count;
+
+  alert("Assignment created successfully.");
+
+  document.getElementById("assignmentTitle").value = "";
+
+  document.getElementById("assignmentDescription").value = "";
+
+}
+
+
+/* CURRICULUM */
+
+function saveCurriculum() {
+
+  const topic =
+    document.getElementById("topic").value;
+
+  const week =
+    document.getElementById("weekNumber").value;
+
+  if (!topic || !week) {
+
+    alert("Please enter the week and topic.");
+
+    return;
+
+  }
+
+  alert(
+    "Curriculum saved successfully.\n\n" +
+    week + " — " + topic
+  );
+
+  document.getElementById("weekNumber").value = "";
+
+  document.getElementById("topic").value = "";
+
+  document.getElementById("curriculumDetails").value = "";
+
+}
+
+
+/* LOAD SAVED COUNTS */
+
+document.getElementById("announcementCount").innerText =
+  localStorage.getItem("announcementCount") || 0;
+
+document.getElementById("assignmentCount").innerText =
+  localStorage.getItem("assignmentCount") || 0;
+
+document.getElementById("studentCount").innerText =
+  localStorage.getItem("studentCount") || 0;
+
+</script>
+
+</body>
+  </html>
